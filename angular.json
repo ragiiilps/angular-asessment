@@ -25,7 +25,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -91,8 +92,21 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "AngularAsessment:build:production",
+            "firebaseProject": "bootcamp-a1a1d",
+            "firebaseHostingSite": "bootcamp-a1a1d"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

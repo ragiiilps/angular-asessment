@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bootcamp-a1a1d": {
+      "hosting": {
+        "AngularAsessment": [
+          "bootcamp-a1a1d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bootcamp-a1a1d"
+  }
+}

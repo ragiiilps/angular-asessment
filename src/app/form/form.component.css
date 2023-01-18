@@ -1,0 +1,55 @@
+.header{
+  padding: 35px 30px;
+  background-color: aqua;
+}
+.title{
+  font-weight: bold;
+}
+.form-section{
+  /* background-color: whitesmoke; */
+  padding:20px;
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.073);
+}
+form{
+  width: 80%;
+  margin: 0 auto;
+}
+.btn-section{
+  display: flex;
+}
+
+/* The alert message box */
+.alert {
+  padding: 10px;
+  background-color: rgb(22, 209, 22);
+  color: white;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  /* margin-bottom: 15px; */
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+input::placeholder{
+  font-style: italic;
+}

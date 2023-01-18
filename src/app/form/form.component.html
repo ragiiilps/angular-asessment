@@ -1,0 +1,63 @@
+<!-- <header class="container-fluid header">
+  <h1 class="title">User List</h1>
+</header> -->
+<div class="container mt-3 form-section">
+  <!-- <div class="alert" *ngIf="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <p *ngIf="!message">User added successfully</p>
+    <p *ngIf="message">User updated successfully</p>
+
+  </div> -->
+  <div class="form">
+    <form (ngSubmit)="addUser(userForm.value)" [formGroup]="userForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="email" class="form-control" id="name" formControlName="userName" placeholder="John">
+        <small style="color: red;" *ngIf="userForm.get('userName').errors?.['required'] && userForm.get('userName').touched">Name is required</small>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" formControlName="userEmail" placeholder="john@example.com">
+        <small style="color: red;" *ngIf="userForm.get('userEmail').errors?.['required'] && userForm.get('userEmail').touched">Email is required</small>
+        <small style="color: red;" *ngIf="userForm.get('userEmail').errors?.['email']">Email not valid</small>
+      </div>
+      <div class="mb-3">
+        <label for="contact" class="form-label">Contact</label>
+        <input type="text" class="form-control" id="contact" formControlName="userContact" placeholder="084932xxx">
+        <div style="display: flex; flex-direction: column;">
+          <small style="color: red;" *ngIf="userForm.get('userContact').errors?.['required'] && userForm.get('userContact').touched">Contact is required</small>
+          <small style="color: red;" *ngIf="userForm.get('userContact').value.length < 12 && userForm.get('userContact').touched">Contact length must be 12 or more</small>
+        </div>
+      </div>
+      <div class="s-btn">
+        <a *ngIf="editMode" href="/Home" class="btn btn-outline-danger me-2">Cancel</a>
+        <input type="submit" value="{{editMode? 'Update user' : 'Add User'}}" class="btn btn-outline-primary" [disabled]="userForm.invalid">
+      </div>
+    </form>
+  </div>
+</div>
+
+<app-list [allUsers]="allUsers" (getUser)="getUser($event)" (userUpdate)="updateUser($event)"></app-list>
+<!-- <app-list></app-list> -->
+
+<script>
+  // Get all elements with class="closebtn"
+  var close = document.getElementsByClassName("closebtn");
+  var i;
+
+  // Loop through all close buttons
+  for (i = 0; i < close.length; i++) {
+    // When someone clicks on a close button
+    close[i].onclick = function(){
+
+      // Get the parent of <span class="closebtn"> (<div class="alert">)
+      var div = this.parentElement;
+
+      // Set the opacity of div to 0 (transparent)
+      div.style.opacity = "0";
+
+      // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+      setTimeout(function(){ div.style.display = "none"; }, 600);
+    }
+  }
+  </script>
